@@ -1,0 +1,23 @@
+.
+├── client
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── node_modules
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   ├── src
+│   ├── tsconfig.app.json
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── devlog.txt
+├── server
+│   ├── index.js
+│   ├── node_modules
+│   ├── package-lock.json
+│   └── package.json
+└── specs.txt
+
+I'm using Vite/React frontend, Node.js backend, and Supabase db

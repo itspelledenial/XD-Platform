@@ -1,0 +1,8 @@
+Lessons wrung from the grippers of hell
+
+march 5 - 
+abstract ports and urls to .env files
+ask chatgpt for precision debugging
+test backend with curl, in terminal
+use netstat to see whats running on ports
+
