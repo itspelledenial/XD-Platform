@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/games`)
