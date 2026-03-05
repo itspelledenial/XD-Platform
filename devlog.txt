@@ -6,3 +6,7 @@ ask chatgpt for precision debugging
 test backend with curl, in terminal
 use netstat to see whats running on ports
 
+deployed project on vercel
+NEXT 
+need to work out how to get vercel-deployed-frontend to talk to supabase
+see console: throwing JSON parse error

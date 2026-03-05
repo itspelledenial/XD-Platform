@@ -1,27 +1,36 @@
 // app.tsx
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [data, setData] = useState(null)
 
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/games`)
-      .then(async res => {
-        const text = await res.text();
-        console.log("RAW RESPONSE:", text);
-        try {
-          const data = JSON.parse(text);
-          console.log("PARSED DATA:", data);
-        } catch (e) {
-          console.error("JSON parse error:", e);
-        }
-      })
-      .catch(err => console.error("Fetch error:", err));
-  }, []);
+  const fetchGames = async () => {
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/games`)
+      const text = await res.text()
+      console.log("RAW RESPONSE:", text)
+
+      const parsed = JSON.parse(text)
+      console.log("PARSED DATA:", parsed)
+
+      setData(parsed)
+    } catch (err) {
+      console.error("Fetch error:", err)
+    }
+  }
 
   return (
     <>
       <p>Hi</p>
+
+      <button onClick={fetchGames}>
+        Fetch Games
+      </button>
+
+      {data && (
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+      )}
     </>
   )
 }
