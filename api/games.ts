@@ -11,11 +11,22 @@ const supabase = createClient(
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
-    const { data, error } = await supabase.from("games").select("*");
+    if (req.method === 'GET') {
+      const { data, error } = await supabase.from('games').select('*')
+      if (error) return res.status(500).json({ error: error.message })
+      return res.status(200).json(data)
+    }
 
-    if (error) throw error;
+    if (req.method === 'POST') {
+      const { title, description, price } = req.body
+      const { data, error } = await supabase.from('games').insert([{ title, description, price }])
+      if (error) return res.status(500).json({ error: error.message })
+      return res.status(201).json(data)
+    }
 
-    res.status(200).json(data);
+    res.setHeader('Allow', ['GET', 'POST'])
+    res.status(405).end(`Method ${req.method} Not Allowed`)
+    
   } catch (err: any) {
     console.error("API ERROR:", err);
     res.status(500).json({ error: err.message });

@@ -26,3 +26,13 @@ must set env vars on the vercel build settings manually
 on supabase website i get status 200 on network/devtools and the entry
 shows up on console. fuck yes!
 
+11:30 pm getting my hands wet with implementing login/registration.
+-supabase has an automatic authentication service which is pretty handy
+don't need to write any of the logic myself. login is already working
+basically, supabase's auto auth service means i dont need to write any API
+functions in ./api. which is good.
+-the fuckers at Supabase rate limit registrations to two per hour per IP address
+even though im not even fucking emailing my users on registration yet
+i might acc have to set up a custom SMTP provider (Amazon SES) just for dealing with that
+next: implement routing in App, make the login/reg. prettier, update users table upon registration
+

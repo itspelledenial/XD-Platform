@@ -1,27 +1,15 @@
-// app.tsx
-import { useState } from 'react'
+//import { useState } from 'react'
 import './App.css'
+import AddGameForm from './components/AddGameForm'
+import LoginForm from './components/LoginForm'
+import RegisterForm from './components/RegisterForm'
 
 function App() {
-  const [data, setData] = useState(null)
-
-  const fetchGames = async () => {
-    const res = await fetch("/api/games");
-    const data = await res.json();
-    console.log(data);
-  };
-
   return (
     <>
-      <p>Hi</p>
-
-      <button onClick={fetchGames}>
-        Fetch Games
-      </button>
-
-      {data && (
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      )}
+      <h1>XDPlatform Login and Registration</h1>
+      <LoginForm />
+      <RegisterForm />
     </>
   )
 }
