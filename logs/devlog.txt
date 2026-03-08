@@ -14,3 +14,7 @@ see console: throwing JSON parse error
 march 6
 wrung my head for two hours over this bs
 still trying to get vercel-deployed-frontend to talk to supabase
+
+march 8
+still trying to get vercel-deployed-frontend to talk to supabase
+name the file .env not .env.local
