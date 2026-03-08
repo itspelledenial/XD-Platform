@@ -6,19 +6,10 @@ function App() {
   const [data, setData] = useState(null)
 
   const fetchGames = async () => {
-    try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/games`)
-      const text = await res.text()
-      console.log("RAW RESPONSE:", text)
-
-      const parsed = JSON.parse(text)
-      console.log("PARSED DATA:", parsed)
-
-      setData(parsed)
-    } catch (err) {
-      console.error("Fetch error:", err)
-    }
-  }
+    const res = await fetch("/api/games");
+    const data = await res.json();
+    console.log(data);
+  };
 
   return (
     <>

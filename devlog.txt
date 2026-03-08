@@ -10,3 +10,7 @@ deployed project on vercel
 NEXT 
 need to work out how to get vercel-deployed-frontend to talk to supabase
 see console: throwing JSON parse error
+
+march 6
+wrung my head for two hours over this bs
+still trying to get vercel-deployed-frontend to talk to supabase
