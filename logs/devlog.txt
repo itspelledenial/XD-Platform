@@ -18,3 +18,11 @@ still trying to get vercel-deployed-frontend to talk to supabase
 march 8
 still trying to get vercel-deployed-frontend to talk to supabase
 name the file .env not .env.local
+
+vercel doesnt actually read .env file, .env file is only for local deployment
+must set env vars on the vercel build settings manually
+
+🎉 fuck yes!! got the site talking to supabase db. when i add a row
+on supabase website i get status 200 on network/devtools and the entry
+shows up on console. fuck yes!
+
